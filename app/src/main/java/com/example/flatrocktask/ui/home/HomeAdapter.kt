@@ -34,7 +34,7 @@ class HomeAdapter(private val clickListener: ClickListener): RecyclerView.Adapte
         private lateinit var currentData: MovieResult
         fun bind(){
             currentData = data[adapterPosition]
-            binding.root.setOnClickListener(this)
+            binding.characterImg.setOnClickListener(this)
             binding.apply {
                 characterTxt.text = currentData.title
                 Glide.with(itemView.context).load("https://image.tmdb.org/t/p/w500/"+ currentData.poster_path).into(binding.characterImg)

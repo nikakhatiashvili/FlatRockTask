@@ -5,12 +5,20 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.flatrocktask.ui.model.toprated.MovieResult
+import com.example.flatrocktask.ui.model.toprated.TopRatedMovies
 import com.example.flatrocktask.ui.network.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
+
 class HomeViewModel : ViewModel() {
+
+
+
+    private var _toprated = MutableLiveData<List<TopRatedMovies>>()
+    val toprated:LiveData<List<TopRatedMovies>> get() = _toprated
 
     private var _topRatedMovies = MutableLiveData<List<MovieResult>>()
     val topRatedMovies:LiveData<List<MovieResult>> get() = _topRatedMovies
